@@ -1,0 +1,146 @@
+# Class descriptions
+
+- Name: "Barbarian"
+  Details:
+  - ["Hit Dice", "1d12"]
+  - ["HP at 1st level", "12 + CON"]
+  - ["HP at higher levels", "1d12(or 7)+CON per barbarian level after 1st"]
+  - ["Armor", "Light armor, medium armor, shields"]
+  - ["Weapons", "Simple weapons, martial weapons"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "STR, CON"]
+  - ["Skills", "Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: greataxe/any martial melee weapon, two handaxes/any simple weapon, explorer's pack, and four javelins"]
+
+- Name: "Bard"
+  Details:
+  - ["Hit Dice", "1d8"]
+  - ["HP at 1st level", "8 + CON"]
+  - ["HP at higher levels", "1d8(or 5)+CON per bard level after 1st"]
+  - ["Armor", "Light armor"]
+  - ["Weapons", "Simple weapons, hand crossbows, longswords, rapiers, shortswords"]
+  - ["Tools", "Three musical instruments of your choice"]
+  - ["Saving Throws", "DEX, CHA"]
+  - ["Skills", "Choose any three"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Rapier/longsword/any simple weapon, diplomat's pack/entertainer's pack, lute/any other musical instrument, leather armor and a dagger"]
+
+- Name: "Cleric"
+  Details:
+  - ["Hit Dice", "1d8"]
+  - ["HP at 1st level", "8 + CON"]
+  - ["HP at higher levels", "1d8(or 5)+CON per cleric level after 1st"]
+  - ["Armor", "Light armor, medium armor, shields"]
+  - ["Weapons", "All simple weapons"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "WIS, CHA"]
+  - ["Skills", "Choose two from History, Insight, Medicine, Persuasion, and Religion"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Mace/warhammer, scale mail/leather armor/chain mail, light crossbow and 20 bolts/any simple weapon, a priest's pack/explorer's pack, shield and a holy symbol"]
+
+- Name: "Druid"
+  Details:
+  - ["Hit Dice", "1d8"]
+  - ["HP at 1st level", "8 + CON"]
+  - ["HP at higher levels", "1d8(or 5)+CON per druid level after 1st"]
+  - ["Armor", "Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)"]
+  - ["Weapons", "Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears"]
+  - ["Tools", "Herbalism kit"]
+  - ["Saving Throws", "INT, WIS"]
+  - ["Skills", "Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: A wooden shield/any simple weapon, a scimitar/any simple melee weapon, leather armor, an explorer's pack, and a druidic focus"]
+
+- Name: "Fighter"
+  Details:
+  - ["Hit Dice", "1d10"]
+  - ["HP at 1st level", "10 + CON"]
+  - ["HP at higher levels", "1d10(or 6)+CON per fighter level after 1st"]
+  - ["Armor", "All armor, shields"]
+  - ["Weapons", "Simple weapons, martial weapons"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "STR, CON"]
+  - ["Skills", "Choose two from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Chain mail/leather armor, longbow and 20 arrows, a martial weapon and a shield/two martial weapons, a light crossbow and 20 bolts/two handaxes, a dungeoneer's pack/explorer's pack"]
+
+- Name: "Monk"
+  Details:
+  - ["Hit Dice", "1d8"]
+  - ["HP at 1st level", "8 + CON"]
+  - ["HP at higher levels", "1d8(or 5)+CON per monk level after 1st"]
+  - ["Armor", "None"]
+  - ["Weapons", "Simple weapons, shortswords"]
+  - ["Tools", "Choose one type of artisan's tools or one musical instrument"]
+  - ["Saving Throws", "STR, DEX"]
+  - ["Skills", "Choose two from Acrobatics, Athletics, History, Insight, Religion, Stealth"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: A shortsword/any simple weapon, a dungeoneer's pack/an explorer's pack, 10 darts"]
+
+- Name: "Paladin"
+  Details:
+  - ["Hit Dice", "1d10"]
+  - ["HP at 1st level", "10 + CON"]
+  - ["HP at higher levels", "1d10(or 6)+CON per paladin level after 1st"]
+  - ["Armor", "All armor, shields"]
+  - ["Weapons", "Simple weapons, martial weapons"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "WIS, CHA"]
+  - ["Skills", "Choose two from Ahtletics, Insight, Intimidation, Medicine, Persuasion, and Religion"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: A martial weapon and a shield/two martial weapons, five javelins/any simple melee weapon, priest's pack/explorer's pack, chain mail and a holy symbol"]
+
+- Name: "Ranger"
+  Details:
+  - ["Hit Dice", "1d10"]
+  - ["HP at 1st level", "10 + CON"]
+  - ["HP at higher levels", "1d10(or 6)+CON per ranger level after 1st"]
+  - ["Armor", "Light armor, medium armor, shields"]
+  - ["Weapons", "Simple weapons, martial weapons"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "STR, DEX"]
+  - ["Skills", "Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Scale mail/leather armor, two shortswords/two simple melee weapons, dungeoneer's pack/explorer's pack, longbow and a quiver of 20 arrows"]
+
+- Name: "Rogue"
+  Details:
+  - ["Hit Dice", "1d8"]
+  - ["HP at 1st level", "8 + CON"]
+  - ["HP at higher levels", "1d8(or 5)+CON per rogue level after 1st"]
+  - ["Armor", "Light armor"]
+  - ["Weapons", "Simple weapons, hand crossbows, longswords, rapiers, shortswords"]
+  - ["Tools", "Thieves' tools"]
+  - ["Saving Throws", "DEX, INT"]
+  - ["Skills", "Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Rapier/shortsword, shortbow and quiver of 20 arrows/shortsword, a burglar's pack/dungeoneer's pack/explorer's pack, leather armor, two daggers and thieves' tools"]
+
+- Name: "Sorcerer"
+  Details:
+  - ["Hit Dice", "1d6"]
+  - ["HP at 1st level", "6 + CON"]
+  - ["HP at higher levels", "1d6(or 4)+CON per sorcerer level after 1st"]
+  - ["Armor", "None"]
+  - ["Weapons", "Daggers, darts, slings, quarterstaffs, light crossbows"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "CON, CHA"]
+  - ["Skills", "Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, Religion"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Light crossbow and 20 bolts/any simple weapon, a component's pouch/arcane focus, a dungeoneer's pack/explorer's pack, two daggers"]
+
+- Name: "Warlock"
+  Details:
+  - ["Hit Dice", "1d8"]
+  - ["HP at 1st level", "8 + CON"]
+  - ["HP at higher levels", "1d8(or 5)+CON per warlock level after 1st"]
+  - ["Armor", "Light armor"]
+  - ["Weapons", "Simple weapons"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "WIS, CHA"]
+  - ["Skills", "Choose two from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: A light crossbow and 20 bolts/any simple weapon, a component pouch/arcane focus, a scholar's pack/dungeoneer's pack, leather armor, any simple weapon, and two daggers"]
+
+
+- Name: "Wizard"
+  Details:
+  - ["Hit Dice", "1d6"]
+  - ["HP at 1st level", "6 + CON"]
+  - ["HP at higher levels", "1d6(or 4)+CON per wizard level after 1st"]
+  - ["Armor", "None"]
+  - ["Weapons", "Daggers, darts, slings, quarterstaffs, light crossbows"]
+  - ["Tools", "None"]
+  - ["Saving Throws", "INT, WIS"]
+  - ["Skills", "Choose two from Arcana, History, Insight, Investigation, Medicine, Religion"]
+  - ["Equipment", "You start with the following equipment, in addition to the equipment granted by your background: Quarterstaff/dagger, component pouch/arcane focus, scholar's pack/explorer's pack, a spellbook"]
