@@ -1,16 +1,9 @@
 import npyscreen, curses
 import yaml
 
+import dCharSheet as charSheet
 from dboxwidget import *
-
-with open('races.yaml', 'r') as f:
-    race_descriptions = yaml.load(f)
-
-with open('classes.yaml', 'r') as f:
-    class_descriptions = yaml.load(f)
-
-race_index = None
-class_index = None
+from yamlLoader import *
 
 class NewCharRace(npyscreen.FormBaseNew):
     def create(self):
@@ -40,8 +33,7 @@ class NewCharRace(npyscreen.FormBaseNew):
         self.optionDisplay.display()
 
     def nextForm(self, index):
-        global race_index
-        race_index = index
+        charSheet.getCharSheet().raceIndex = index
         race_desc = race_descriptions[index]
         race_desc = [i for sublist in race_desc for i in sublist]
         if "Subraces" in race_descriptions[index].keys():
@@ -83,6 +75,7 @@ class OptionDisplay(dBoxTitle):
 
 class NewCharSubRace(npyscreen.FormBaseNew):
     def create(self):
+        race_index = charSheet.getCharSheet().raceIndex
         subraces = [subrace["Name"] for subrace in race_descriptions[race_index]["Subraces"]]
         self.pRace  = self.add(OptionSelector, name="Race", values=subraces, rely=3, relx=5, max_width=20)
         self.pRace.setParent(self)
@@ -108,7 +101,7 @@ class NewCharSubRace(npyscreen.FormBaseNew):
         self.optionDisplay.display()
 
     def nextForm(self, index):
-        sub_race_index = index 
+        charSheet.getCharSheet().subraceIndex = index
         change_to = "NEW_CHAR_CLASS"
 
         self.parentApp.change_form(change_to)
@@ -147,7 +140,7 @@ class NewCharDraconicAncestry(npyscreen.FormBaseNew):
 
 
     def nextForm(self, key):
-        draconic_ancestry_index = self.table.cursor_line - 1
+        charSheet.getCharSheet().draconicAncestryIndex = self.table.cursor_line - 1
         change_to = "NEW_CHAR_CLASS"
 
         self.parentApp.change_form(change_to)
@@ -184,8 +177,7 @@ class NewCharClass(npyscreen.FormBaseNew):
         self.parentApp.setNextForm("NEW_CHAR_STATS")
 
     def nextForm(self, index):
-        global class_index
-        class_index = index
+        charSheet.getCharSheet().classIndex = index
 
         change_to = "NEW_CHAR_STATS"
 
@@ -194,9 +186,63 @@ class NewCharClass(npyscreen.FormBaseNew):
 
 class NewCharStats(npyscreen.Form):
     def create(self):
-        # TODO: Menu select
-        self.pClass  = self.add(npyscreen.TitleText, name="Class")
+        relx = 5
+        rely = 3
+
+        self.strField = self.add(npyscreen.TitleText, name='STR', value='10', field_width=20, relx=relx, rely=rely)
+        self.dexField = self.add(npyscreen.TitleText, name='DEX', value='10', field_width=20, relx=relx)
+        self.conField = self.add(npyscreen.TitleText, name='CON', value='10', field_width=20, relx=relx)
+        self.intField = self.add(npyscreen.TitleText, name='INT', value='10', field_width=20, relx=relx)
+        self.wisField = self.add(npyscreen.TitleText, name='WIS', value='10', field_width=20, relx=relx)
+        self.chaField = self.add(npyscreen.TitleText, name='CHA', value='10', field_width=20, relx=relx)
 
     def afterEditing(self):
-        self.parentApp.setNextForm(None)
+        charSheet.getCharSheet().setStats(newStats = {
+             'STR': self.strField.value,
+             'DEX': self.dexField.value,
+             'CON': self.conField.value,
+             'INT': self.intField.value,
+             'WIS': self.wisField.value,
+             'CHA': self.chaField.value
+        })
+        self.parentApp.setNextForm("NEW_CHAR_BACKGROUND")
  
+
+class NewCharBackground(npyscreen.FormBaseNew):
+    def create(self):
+        relx = 5
+        rely = 3
+
+        backgrounds = [background["Name"] for background in background_descriptions]
+
+        self.pBackgrounds = self.add(OptionSelector, name="Background", values=backgrounds, rely=3, relx=5, max_width=20)
+        self.pBackgrounds.setParent(self)
+
+        self.optionDisplay = self.add(OptionDisplay, descriptions=background_descriptions, name="Details", autowrap=True, rely=2, relx=-60, contained_widget_arguments={'color': 'WARNING', 'widgets_inherit_color': True})
+        self.optionDisplay.updateDescription(0)
+
+        self.pBackgrounds.handlers.update({
+                curses.KEY_UP: self.updateDescription,
+                curses.KEY_DOWN: self.updateDescription,
+                curses.KEY_LEFT: self.updateDescription,
+                curses.KEY_RIGHT: self.updateDescription,
+                curses.ascii.TAB: self.updateDescription 
+            })
+  
+    def updateDescription(self, key):
+        if key in [curses.KEY_UP, curses.KEY_LEFT]:
+            self.pBackgrounds.h_cursor_line_up(key)
+        elif key in [curses.KEY_DOWN, curses.KEY_RIGHT]:
+            self.pBackgrounds.h_cursor_line_down(key)
+
+        self.optionDisplay.updateDescription(self.pBackgrounds.cursor_line)
+        self.optionDisplay.display()
+
+    def nextForm(self, index):
+        charSheet.getCharSheet().backgroundIndex = index
+
+        change_to = None
+
+        self.parentApp.change_form(change_to)
+
+

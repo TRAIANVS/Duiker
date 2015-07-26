@@ -2,6 +2,7 @@
 import npyscreen, curses
 import yaml
 
+import dCharSheet as charSheet
 from dboxwidget import *
 from dNewChar import *
 
@@ -13,6 +14,7 @@ class Duiker(npyscreen.NPSAppManaged):
         self.addFormClass("NEW_CHAR_DRACONIC_ANCESTRY", NewCharDraconicAncestry, name="Character Creator", color="WARNING",  )
         self.addForm("NEW_CHAR_CLASS", NewCharClass, name="Character Creator", color="WARNING",  )
         self.addForm("NEW_CHAR_STATS", NewCharStats, name="Character Creator", color="WARNING",  )
+        self.addForm("NEW_CHAR_BACKGROUND", NewCharBackground, name="Character Creator", color="WARNING",  )
         self.addForm("NOT_IMPLEMENTED", IntroForm, name="Not implemented yet", color="WARNING",)
         
     
@@ -38,6 +40,7 @@ class NavMenu(npyscreen.MultiLineAction):
         index = self.values.index(act_on_this)
 
         if index == 0:
+            charSheet.setCharSheet(charSheet.CharacterSheet())
             change_to = "NEW_CHAR_RACE"
         elif index == 1:
             change_to = "NOT_IMPLEMENTED"
